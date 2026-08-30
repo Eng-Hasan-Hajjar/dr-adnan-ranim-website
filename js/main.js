@@ -8,8 +8,10 @@ document.addEventListener('DOMContentLoaded', function () {
     // ==========================================
     // CONFIGURATION
     // ==========================================
-    const WHATSAPP_NUMBER = '963XXXXXXXXX'; // غيّر هذا الرقم لرقم الواتساب الفعلي
-
+    // أرقام الواتساب
+    const WHATSAPP_RANEEM = '963954158703';   // د. رنيم مصري
+    const WHATSAPP_ADNAN = '963954158674';    // د. محمد عدنان أبو بكر
+    const WHATSAPP_DEFAULT = '963954158703';  // الرقم الافتراضي (د. رنيم)
     // ==========================================
     // PRELOADER
     // ==========================================
@@ -257,19 +259,28 @@ document.addEventListener('DOMContentLoaded', function () {
         }
 
         const message = `🦷 *حجز موعد جديد - عيادة د. عدنان & د. رنيم*
-━━━━━━━━━━━━━━━━━━
-👤 *الاسم:* ${name}
-📱 *الهاتف:* ${phone}
-🏥 *الخدمة:* ${service}
-👨‍⚕️ *الطبيب:* ${doctor}
-📅 *التاريخ:* ${date}
-🕐 *الوقت:* ${time}
-📝 *ملاحظات:* ${notes || 'لا توجد'}
-━━━━━━━━━━━━━━━━━━
-أرغب بحجز موعد، شكراً لكم 🙏`;
+                                ━━━━━━━━━━━━━━━━━━
+                                👤 *الاسم:* ${name}
+                                📱 *الهاتف:* ${phone}
+                                🏥 *الخدمة:* ${service}
+                                👨‍⚕️ *الطبيب:* ${doctor}
+                                📅 *التاريخ:* ${date}
+                                🕐 *الوقت:* ${time}
+                                📝 *ملاحظات:* ${notes || 'لا توجد'}
+                                ━━━━━━━━━━━━━━━━━━
+                                أرغب بحجز موعد، شكراً لكم 🙏`;
+
+        encodedMessage = encodeURIComponent(message);
+        // اختيار رقم الواتساب حسب الطبيب
+        let whatsappNum = WHATSAPP_RANEEM; // الافتراضي
+        if (doctor === 'د. عدنان أبو بكر') {
+            whatsappNum = WHATSAPP_ADNAN;
+        } else if (doctor === 'د. رنيم مصري') {
+            whatsappNum = WHATSAPP_RANEEM;
+        }
 
         const encodedMessage = encodeURIComponent(message);
-        const whatsappURL = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodedMessage}`;
+        const whatsappURL = `https://wa.me/${whatsappNum}?text=${encodedMessage}`;
 
         window.open(whatsappURL, '_blank');
         closeBookingModal();
@@ -294,13 +305,13 @@ document.addEventListener('DOMContentLoaded', function () {
         }
 
         const message = `📩 *رسالة جديدة من الموقع*
-━━━━━━━━━━━━━━━━━━
-👤 *الاسم:* ${name}
-📱 *الهاتف:* ${phone}
-📧 *البريد:* ${email || 'غير محدد'}
-💬 *الرسالة:*
-${messageText}
-━━━━━━━━━━━━━━━━━━`;
+                    ━━━━━━━━━━━━━━━━━━
+                    👤 *الاسم:* ${name}
+                    📱 *الهاتف:* ${phone}
+                    📧 *البريد:* ${email || 'غير محدد'}
+                    💬 *الرسالة:*
+                    ${messageText}
+                    ━━━━━━━━━━━━━━━━━━`;
 
         const encodedMessage = encodeURIComponent(message);
         const whatsappURL = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodedMessage}`;
