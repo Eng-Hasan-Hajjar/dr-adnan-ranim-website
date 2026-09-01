@@ -9,9 +9,9 @@ document.addEventListener('DOMContentLoaded', function () {
     // CONFIGURATION
     // ==========================================
     // أرقام الواتساب
-    const WHATSAPP_RANEEM = '963954158703';   // د. رنيم مصري
-    const WHATSAPP_ADNAN = '963954158674';    // د. محمد عدنان أبو بكر
-    const WHATSAPP_DEFAULT = '963954158703';  // الرقم الافتراضي (د. رنيم)
+    const WHATSAPP_RANEEM = '+963954158703';   // د. رنيم مصري
+    const WHATSAPP_ADNAN = '+963954158674';    // د. محمد عدنان أبو بكر
+    const WHATSAPP_DEFAULT = '+963954158703';  // الرقم الافتراضي (د. رنيم)
     // ==========================================
     // PRELOADER
     // ==========================================
@@ -211,44 +211,44 @@ document.addEventListener('DOMContentLoaded', function () {
 
 
     // ==========================================
-// HERO VIDEO CONTROLS
-// ==========================================
-const heroVideo = document.getElementById('heroVideo');
-const videoMuteBtn = document.getElementById('videoMuteBtn');
+    // HERO VIDEO CONTROLS
+    // ==========================================
+    const heroVideo = document.getElementById('heroVideo');
+    const videoMuteBtn = document.getElementById('videoMuteBtn');
 
-// التحقق من تحميل الفيديو
-if (heroVideo) {
-    heroVideo.addEventListener('loadeddata', function() {
-        heroVideo.classList.add('loaded');
-        console.log('✅ تم تحميل الفيديو بنجاح');
-    });
-    
-    heroVideo.addEventListener('error', function(e) {
-        console.error('❌ خطأ في تحميل الفيديو:', e);
-        // إظهار الصورة البديلة في حال فشل الفيديو
-        document.querySelector('.hero-overlay').style.opacity = '0.95';
-    });
-}
+    // التحقق من تحميل الفيديو
+    if (heroVideo) {
+        heroVideo.addEventListener('loadeddata', function () {
+            heroVideo.classList.add('loaded');
+            console.log('✅ تم تحميل الفيديو بنجاح');
+        });
 
-// زر كتم/إعادة الصوت
-if (videoMuteBtn) {
-    videoMuteBtn.addEventListener('click', function() {
-        if (heroVideo) {
-            heroVideo.muted = !heroVideo.muted;
-            this.classList.toggle('muted');
-            
-            // تحديث الأيقونة
-            const icon = this.querySelector('i');
-            if (heroVideo.muted) {
-                icon.classList.remove('fa-volume-up');
-                icon.classList.add('fa-volume-mute');
-            } else {
-                icon.classList.remove('fa-volume-mute');
-                icon.classList.add('fa-volume-up');
+        heroVideo.addEventListener('error', function (e) {
+            console.error('❌ خطأ في تحميل الفيديو:', e);
+            // إظهار الصورة البديلة في حال فشل الفيديو
+            document.querySelector('.hero-overlay').style.opacity = '0.95';
+        });
+    }
+
+    // زر كتم/إعادة الصوت
+    if (videoMuteBtn) {
+        videoMuteBtn.addEventListener('click', function () {
+            if (heroVideo) {
+                heroVideo.muted = !heroVideo.muted;
+                this.classList.toggle('muted');
+
+                // تحديث الأيقونة
+                const icon = this.querySelector('i');
+                if (heroVideo.muted) {
+                    icon.classList.remove('fa-volume-up');
+                    icon.classList.add('fa-volume-mute');
+                } else {
+                    icon.classList.remove('fa-volume-mute');
+                    icon.classList.add('fa-volume-up');
+                }
             }
-        }
-    });
-}
+        });
+    }
     // ==========================================
     // BOOKING MODAL
     // ==========================================
@@ -282,85 +282,123 @@ if (videoMuteBtn) {
     // ==========================================
     // BOOKING FORM → WHATSAPP
     // ==========================================
-    const bookingForm = document.getElementById('bookingForm');
-    bookingForm.addEventListener('submit', function (e) {
-        e.preventDefault();
-
-        const name = document.getElementById('bookName').value.trim();
-        const phone = document.getElementById('bookPhone').value.trim();
-        const service = document.getElementById('bookService').value;
-        const doctor = document.getElementById('bookDoctor').value;
-        const date = document.getElementById('bookDate').value;
-        const time = document.getElementById('bookTime').value;
-        const notes = document.getElementById('bookNotes').value.trim();
-
-        if (!name || !phone || !service || !date) {
-            alert('يرجى ملء جميع الحقول المطلوبة');
-            return;
-        }
-
-        const message = `🦷 *حجز موعد جديد - عيادة د. عدنان & د. رنيم*
-                                ━━━━━━━━━━━━━━━━━━
-                                👤 *الاسم:* ${name}
-                                📱 *الهاتف:* ${phone}
-                                🏥 *الخدمة:* ${service}
-                                👨‍⚕️ *الطبيب:* ${doctor}
-                                📅 *التاريخ:* ${date}
-                                🕐 *الوقت:* ${time}
-                                📝 *ملاحظات:* ${notes || 'لا توجد'}
-                                ━━━━━━━━━━━━━━━━━━
-                                أرغب بحجز موعد، شكراً لكم 🙏`;
-
-        encodedMessage = encodeURIComponent(message);
-        // اختيار رقم الواتساب حسب الطبيب
-        let whatsappNum = WHATSAPP_RANEEM; // الافتراضي
-        if (doctor === 'د. عدنان أبو بكر') {
-            whatsappNum = WHATSAPP_ADNAN;
-        } else if (doctor === 'د. رنيم مصري') {
-            whatsappNum = WHATSAPP_RANEEM;
-        }
-
-        const encodedMessage = encodeURIComponent(message);
-        const whatsappURL = `https://wa.me/${whatsappNum}?text=${encodedMessage}`;
-
-        window.open(whatsappURL, '_blank');
-        closeBookingModal();
-        bookingForm.reset();
-    });
-
     // ==========================================
-    // CONTACT FORM → WHATSAPP
+    // BOOKING FORM → WHATSAPP (مُصلَح)
+    // ==========================================
+    const bookingForm = document.getElementById('bookingForm');
+
+    if (bookingForm) {
+        bookingForm.addEventListener('submit', function (e) {
+            e.preventDefault();
+
+            const name = document.getElementById('bookName').value.trim();
+            const phone = document.getElementById('bookPhone').value.trim();
+            const service = document.getElementById('bookService').value;
+            const doctor = document.getElementById('bookDoctor').value;
+            const date = document.getElementById('bookDate').value;
+            const time = document.getElementById('bookTime').value;
+            const notes = document.getElementById('bookNotes').value.trim();
+
+            // التحقق من الحقول المطلوبة
+            if (!name || !phone || !service || !date) {
+                alert('⚠️ يرجى ملء جميع الحقول المطلوبة');
+                return;
+            }
+
+            // اختيار رقم الواتساب حسب الطبيب
+            let whatsappNum = WHATSAPP_RANEEM; // الافتراضي
+            if (doctor === 'د. عدنان أبو بكر') {
+                whatsappNum = WHATSAPP_ADNAN;
+            } else if (doctor === 'د. رنيم مصري') {
+                whatsappNum = WHATSAPP_RANEEM;
+            }
+
+            // تنسيق التاريخ
+            const formattedDate = date ? new Date(date).toLocaleDateString('ar-EG', {
+                year: 'numeric',
+                month: 'long',
+                day: 'numeric'
+            }) : 'غير محدد';
+
+            // بناء الرسالة
+            const message = ` *حجز موعد جديد*
+━━━━━━━━━━━━━━━━━━
+👤 *الاسم:* ${name}
+📱 *الهاتف:* ${phone}
+🏥 *الخدمة:* ${service}
+‍⚕️ *الطبيب:* ${doctor}
+📅 *التاريخ:* ${formattedDate}
+🕐 *الوقت:* ${time}
+📝 *ملاحظات:* ${notes || 'لا توجد'}
+━━━━━━━━━━━━━━━━━━
+أرغب بحجز موعد، شكراً لكم 🙏`;
+
+            // ترميز الرسالة
+            const encodedMessage = encodeURIComponent(message);
+
+            // بناء رابط واتساب
+            const whatsappURL = `https://wa.me/${whatsappNum}?text=${encodedMessage}`;
+
+            console.log(' إرسال إلى:', whatsappNum);
+            console.log('💬 الرسالة:', message);
+
+            // فتح واتساب
+            window.open(whatsappURL, '_blank');
+
+            // إغلاق المودال وإعادة تعيين الفورم
+            closeBookingModal();
+            bookingForm.reset();
+
+            // رسالة نجاح
+            setTimeout(() => {
+                alert('✅ تم فتح واتساب بنجاح! يرجى إرسال الرسالة.');
+            }, 500);
+        });
+    }
+    // ==========================================
+    // CONTACT FORM → WHATSAPP (مُصلَح)
     // ==========================================
     const contactForm = document.getElementById('contactForm');
-    contactForm.addEventListener('submit', function (e) {
-        e.preventDefault();
 
-        const name = document.getElementById('contactName').value.trim();
-        const phone = document.getElementById('contactPhone').value.trim();
-        const email = document.getElementById('contactEmail').value.trim();
-        const messageText = document.getElementById('contactMessage').value.trim();
+    if (contactForm) {
+        contactForm.addEventListener('submit', function (e) {
+            e.preventDefault();
 
-        if (!name || !phone || !messageText) {
-            alert('يرجى ملء جميع الحقول المطلوبة');
-            return;
-        }
+            const name = document.getElementById('contactName').value.trim();
+            const phone = document.getElementById('contactPhone').value.trim();
+            const email = document.getElementById('contactEmail').value.trim();
+            const messageText = document.getElementById('contactMessage').value.trim();
 
-        const message = `📩 *رسالة جديدة من الموقع*
-                    ━━━━━━━━━━━━━━━━━━
-                    👤 *الاسم:* ${name}
-                    📱 *الهاتف:* ${phone}
-                    📧 *البريد:* ${email || 'غير محدد'}
-                    💬 *الرسالة:*
-                    ${messageText}
-                    ━━━━━━━━━━━━━━━━━━`;
+            if (!name || !phone || !messageText) {
+                alert('⚠️ يرجى ملء جميع الحقول المطلوبة');
+                return;
+            }
 
-        const encodedMessage = encodeURIComponent(message);
-        const whatsappURL = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodedMessage}`;
+            const message = ` *رسالة جديدة من الموقع*
+━━━━━━━━━━━━━━━━━━
+👤 *الاسم:* ${name}
+📱 *الهاتف:* ${phone}
+📧 *البريد:* ${email || 'غير محدد'}
+💬 *الرسالة:*
+${messageText}
+━━━━━━━━━━━━━━━━━━`;
 
-        window.open(whatsappURL, '_blank');
-        contactForm.reset();
-    });
+            const encodedMessage = encodeURIComponent(message);
+            const whatsappURL = `https://wa.me/${WHATSAPP_DEFAULT}?text=${encodedMessage}`;
 
+            console.log('📤 إرسال رسالة تواصل إلى:', WHATSAPP_DEFAULT);
+
+            window.open(whatsappURL, '_blank');
+            contactForm.reset();
+
+            setTimeout(() => {
+                alert('✅ تم فتح واتساب بنجاح!');
+            }, 500);
+        });
+    }
+
+
+    
     // ==========================================
     // SET MINIMUM DATE FOR BOOKING
     // ==========================================

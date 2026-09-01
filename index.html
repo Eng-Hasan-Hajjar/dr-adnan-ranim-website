@@ -126,94 +126,86 @@
     </header>
 
     <!-- ==================== HERO SECTION ==================== -->
-   <!-- ==================== HERO SECTION ==================== -->
-<section id="hero" class="hero">
-    <!-- فيديو الخلفية -->
-    <div class="hero-video-container">
-        <video 
-            autoplay 
-            muted 
-            loop 
-            playsinline 
-            poster="images/hero-poster.jpg"
-            class="hero-video"
-            id="heroVideo"
-        >
-            <source src="videos/hero-reel.mp4" type="video/mp4">
-            <!-- صيغ بديلة -->
-            <source src="videos/hero-reel.webm" type="video/webm">
-            <!-- رسالة للمستخدمين القدامى -->
-            <p class="video-fallback">
-                متصفحك لا يدعم تشغيل الفيديو. 
-                <a href="videos/hero-reel.mp4" download>حمّل الفيديو هنا</a>
-            </p>
-        </video>
-        
-        <!-- زر تشغيل/إيقاف الصوت (اختياري) -->
-        <button class="video-mute-btn" id="videoMuteBtn" aria-label="كتم الصوت">
-            <i class="fas fa-volume-mute"></i>
-        </button>
-    </div>
-    
-    <!-- الطبقة الشفافة فوق الفيديو -->
-    <div class="hero-overlay"></div>
-    
-    <!-- الجسيمات المتحركة -->
-    <div class="hero-particles" id="heroParticles"></div>
-    
-    <!-- المحتوى الرئيسي -->
-    <div class="container hero-content">
-        <div class="hero-badge animate-on-scroll">
-            <i class="fas fa-award"></i>
-            <span>مركز طبي متخصص في طب وتجميل الأسنان</span>
-        </div>
-        <h1 class="hero-title animate-on-scroll">
-            ابتسامتك تبدأ
-            <span class="gradient-text">من هنا</span>
-        </h1>
-        <p class="hero-description animate-on-scroll">
-            د. عدنان أبو بكر & د. رنيم مصري يقدمان لكم أحدث تقنيات طب وتجميل الأسنان
-            في قلب مدينة حلب - نزلة أدونيس، المركز الطبي
-        </p>
-        <div class="hero-buttons animate-on-scroll">
-            <button class="btn btn-primary btn-lg" id="heroBookBtn">
-                <i class="fas fa-calendar-check"></i>
-                احجز موعدك الآن
+    <!-- ==================== HERO SECTION ==================== -->
+    <section id="hero" class="hero">
+        <!-- فيديو الخلفية -->
+        <div class="hero-video-container">
+            <video autoplay muted loop playsinline poster="images/hero-poster.jpg" class="hero-video" id="heroVideo">
+                <source src="videos/hero-reel.mp4" type="video/mp4">
+                <!-- صيغ بديلة -->
+                <source src="videos/hero-reel.webm" type="video/webm">
+                <!-- رسالة للمستخدمين القدامى -->
+                <p class="video-fallback">
+                    متصفحك لا يدعم تشغيل الفيديو.
+                    <a href="videos/hero-reel.mp4" download>حمّل الفيديو هنا</a>
+                </p>
+            </video>
+
+            <!-- زر تشغيل/إيقاف الصوت (اختياري) -->
+            <button class="video-mute-btn" id="videoMuteBtn" aria-label="كتم الصوت">
+                <i class="fas fa-volume-mute"></i>
             </button>
-            <a href="#services" class="btn btn-outline btn-lg">
-                <i class="fas fa-teeth"></i>
-                تعرّف على خدماتنا
+        </div>
+
+        <!-- الطبقة الشفافة فوق الفيديو -->
+        <div class="hero-overlay"></div>
+
+        <!-- الجسيمات المتحركة -->
+        <div class="hero-particles" id="heroParticles"></div>
+
+        <!-- المحتوى الرئيسي -->
+        <div class="container hero-content">
+            <div class="hero-badge animate-on-scroll">
+                <i class="fas fa-award"></i>
+                <span>مركز طبي متخصص في طب وتجميل الأسنان</span>
+            </div>
+            <h1 class="hero-title animate-on-scroll">
+                ابتسامتك تبدأ
+                <span class="gradient-text">من هنا</span>
+            </h1>
+            <p class="hero-description animate-on-scroll">
+                د. عدنان أبو بكر & د. رنيم مصري يقدمان لكم أحدث تقنيات طب وتجميل الأسنان
+                في قلب مدينة حلب - نزلة أدونيس، المركز الطبي
+            </p>
+            <div class="hero-buttons animate-on-scroll">
+                <button class="btn btn-primary btn-lg" id="heroBookBtn">
+                    <i class="fas fa-calendar-check"></i>
+                    احجز موعدك الآن
+                </button>
+                <a href="#services" class="btn btn-outline btn-lg">
+                    <i class="fas fa-teeth"></i>
+                    تعرّف على خدماتنا
+                </a>
+            </div>
+            <div class="hero-stats animate-on-scroll">
+                <div class="stat-item">
+                    <span class="stat-number" data-target="10">0</span>
+                    <span class="stat-plus">+</span>
+                    <span class="stat-label">سنة خبرة</span>
+                </div>
+                <div class="stat-divider"></div>
+                <div class="stat-item">
+                    <span class="stat-number" data-target="10000">0</span>
+                    <span class="stat-plus">+</span>
+                    <span class="stat-label">مريض سعيد</span>
+                </div>
+                <div class="stat-divider"></div>
+                <div class="stat-item">
+                    <span class="stat-number" data-target="5000">0</span>
+                    <span class="stat-plus">+</span>
+                    <span class="stat-label">عملية ناجحة</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- مؤشر التمرير -->
+        <div class="hero-scroll-indicator">
+            <a href="#about">
+                <span>اكتشف المزيد</span>
+                <i class="fas fa-chevron-down"></i>
             </a>
         </div>
-        <div class="hero-stats animate-on-scroll">
-            <div class="stat-item">
-                <span class="stat-number" data-target="15">0</span>
-                <span class="stat-plus">+</span>
-                <span class="stat-label">سنة خبرة</span>
-            </div>
-            <div class="stat-divider"></div>
-            <div class="stat-item">
-                <span class="stat-number" data-target="10000">0</span>
-                <span class="stat-plus">+</span>
-                <span class="stat-label">مريض سعيد</span>
-            </div>
-            <div class="stat-divider"></div>
-            <div class="stat-item">
-                <span class="stat-number" data-target="5000">0</span>
-                <span class="stat-plus">+</span>
-                <span class="stat-label">عملية ناجحة</span>
-            </div>
-        </div>
-    </div>
-    
-    <!-- مؤشر التمرير -->
-    <div class="hero-scroll-indicator">
-        <a href="#about">
-            <span>اكتشف المزيد</span>
-            <i class="fas fa-chevron-down"></i>
-        </a>
-    </div>
-</section>
+    </section>
 
     <!-- ==================== ABOUT SECTION ==================== -->
     <section id="about" class="section about">
@@ -235,7 +227,7 @@
                         </div>
                     </div>
                     <div class="about-experience-badge">
-                        <span class="exp-number">+15</span>
+                        <span class="exp-number">+10</span>
                         <span class="exp-text">عاماً من الخبرة</span>
                     </div>
                 </div>
@@ -269,7 +261,7 @@
                             </div>
                             <div>
                                 <h4>خبرة متخصصة</h4>
-                                <p>أكثر من 15 عاماً من الخبرة في طب الأسنان</p>
+                                <p>أكثر من 10 سنوات من الخبرة في طب الأسنان</p>
                             </div>
                         </div>
                         <div class="feature-item">
@@ -294,65 +286,97 @@
                 </div>
             </div>
 
-            <!-- Doctors Cards -->
-            <div class="doctors-section">
-                <div class="section-header animate-on-scroll">
-                    <span class="section-badge">فريقنا الطبي</span>
-                    <h2 class="section-title">أطباؤنا <span class="gradient-text">المتخصصون</span></h2>
-                </div>
 
-                <div class="doctors-grid">
-                    <div class="doctor-card animate-on-scroll">
-                        <div class="doctor-image">
-                            <img src="images/dr-adnan.jpg" alt="د. عدنان أبو بكر - طبيب أسنان متخصص" loading="lazy">
-                            <div class="doctor-overlay">
-                                <div class="doctor-social">
-                                    <a href="#" aria-label="فيسبوك"><i class="fab fa-facebook-f"></i></a>
-                                    <a href="#" aria-label="انستغرام"><i class="fab fa-instagram"></i></a>
-                                    <a href="#" aria-label="لينكدإن"><i class="fab fa-linkedin-in"></i></a>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="doctor-info">
-                            <h3>د. عدنان أبو بكر</h3>
-                            <span class="doctor-specialty">طبيب أسنان - متخصص في التجميل والزراعة</span>
-                            <p>خبرة تزيد عن 15 عاماً في طب وتجميل الأسنان. حاصل على شهادات متخصصة في زراعة الأسنان
-                                والتجميل من أرقى المعاهد.</p>
-                            <div class="doctor-tags">
-                                <span>زراعة أسنان</span>
-                                <span>تجميل</span>
-                                <span>تقويم</span>
-                            </div>
-                        </div>
-                    </div>
 
-                    <div class="doctor-card animate-on-scroll">
-                        <div class="doctor-image">
-                            <img src="images/dr-raneem.jpg" alt="د. رنيم مصري - طبيبة أسنان متخصصة" loading="lazy">
-                            <div class="doctor-overlay">
-                                <div class="doctor-social">
-                                    <a href="#" aria-label="فيسبوك"><i class="fab fa-facebook-f"></i></a>
-                                    <a href="#" aria-label="انستغرام"><i class="fab fa-instagram"></i></a>
-                                    <a href="#" aria-label="لينكدإن"><i class="fab fa-linkedin-in"></i></a>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="doctor-info">
-                            <h3>د. رنيم مصري</h3>
-                            <span class="doctor-specialty">طبيبة أسنان - متخصصة في التجميل وعلاج الجذور</span>
-                            <p>متخصصة في تجميل الأسنان وعلاج الجذور بأحدث التقنيات. تتميز بدقتها العالية واهتمامها بأدق
-                                التفاصيل.</p>
-                            <div class="doctor-tags">
-                                <span>تجميل أسنان</span>
-                                <span>علاج جذور</span>
-                                <span>تبييض</span>
-                            </div>
-                        </div>
-                    </div>
+
+
+
+
+
+            <!-- ==================== DOCTORS INFO SECTION ==================== -->
+          <!-- ==================== DOCTORS INFO SECTION ==================== -->
+<div class="doctors-info-section">
+    <div class="section-header animate-on-scroll">
+        <span class="section-badge">فريقنا الطبي</span>
+        <h2 class="section-title">أطباؤنا <span class="gradient-text">المتميزون</span></h2>
+        <p class="section-desc">أخصائيا طب أسنان يقدمان رعاية شاملة ومتميزة</p>
+    </div>
+
+    <div class="doctors-info-grid">
+        <!-- د. عدنان أبو بكر -->
+        <div class="doctor-info-card animate-on-scroll">
+            <div class="doctor-info-header">
+                <div class="doctor-icon-wrapper">
+                    <i class="fas fa-user-md"></i>
                 </div>
+                <h3>د. محمد عدنان أبو بكر</h3>
+                <span class="doctor-title">أخصائي طب الأسنان</span>
+            </div>
+            <div class="doctor-info-body">
+                <p>
+                    أخصائي طب أسنان يقدم رعاية شاملة ومتميزة للمرضى. 
+                    يهتم بتقديم أفضل الحلول العلاجية والتجميلية بأسلوب مهني ودقيق.
+                </p>
+                <ul class="doctor-skills">
+                    <li><i class="fas fa-check"></i> معالجات الجذور</li>
+                    <li><i class="fas fa-check"></i> التعويضات السنية</li>
+                    <li><i class="fas fa-check"></i> زراعة الأسنان</li>
+                    <li><i class="fas fa-check"></i> تجميل الأسنان</li>
+                    <li><i class="fas fa-check"></i> معالجة النخور</li>
+                    <li><i class="fas fa-check"></i> طب الأسنان العام</li>
+                </ul>
+            </div>
+            <div class="doctor-info-footer">
+                <a href="https://wa.me/963954158674" class="btn btn-whatsapp btn-sm" target="_blank">
+                    <i class="fab fa-whatsapp"></i>
+                    تواصل عبر واتساب
+                </a>
             </div>
         </div>
+
+        <!-- د. رنيم مصري -->
+        <div class="doctor-info-card animate-on-scroll">
+            <div class="doctor-info-header">
+                <div class="doctor-icon-wrapper">
+                    <i class="fas fa-user-md"></i>
+                </div>
+                <h3>د. رنيم مصري</h3>
+                <span class="doctor-title">أخصائية طب الأسنان</span>
+            </div>
+            <div class="doctor-info-body">
+                <p>
+                    أخصائية طب أسنان تتميز بالدقة والاهتمام بأدق التفاصيل. 
+                    تحرص على تقديم أفضل رعاية علاجية وتجميلية في بيئة مريحة وآمنة.
+                </p>
+                <ul class="doctor-skills">
+                    <li><i class="fas fa-check"></i> معالجات الجذور</li>
+                    <li><i class="fas fa-check"></i> التعويضات السنية</li>
+                    <li><i class="fas fa-check"></i> زراعة الأسنان</li>
+                    <li><i class="fas fa-check"></i> تجميل الأسنان</li>
+                    <li><i class="fas fa-check"></i> تبييض الأسنان</li>
+                    <li><i class="fas fa-check"></i> طب الأسنان العام</li>
+                </ul>
+            </div>
+            <div class="doctor-info-footer">
+                <a href="https://wa.me/963954158703" class="btn btn-whatsapp btn-sm" target="_blank">
+                    <i class="fab fa-whatsapp"></i>
+                    تواصل عبر واتساب
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+        </div>
     </section>
+
+
+
+
+
+
 
     <!-- ==================== SERVICES SECTION ==================== -->
     <section id="services" class="section services">
@@ -380,9 +404,12 @@
                             <li><i class="fas fa-check-circle"></i> فينير ولومينير</li>
                             <li><i class="fas fa-check-circle"></i> تيجان زيركون</li>
                         </ul>
-                        <button class="btn btn-text service-book-btn">
-                            احجز الآن <i class="fas fa-arrow-left"></i>
-                        </button>
+                        <div class="btn-wrapper">
+                            <button class="btn service-book-btn">
+                                <i class="fas fa-calendar-check"></i>
+                                احجز الآن
+                            </button>
+                        </div>
                     </div>
                 </div>
 
@@ -401,9 +428,12 @@
                             <li><i class="fas fa-check-circle"></i> تبييض بالزووم</li>
                             <li><i class="fas fa-check-circle"></i> تبييض منزلي</li>
                         </ul>
-                        <button class="btn btn-text service-book-btn">
-                            احجز الآن <i class="fas fa-arrow-left"></i>
-                        </button>
+                        <div class="btn-wrapper">
+                            <button class="btn service-book-btn">
+                                <i class="fas fa-calendar-check"></i>
+                                احجز الآن
+                            </button>
+                        </div>
                     </div>
                 </div>
 
@@ -422,9 +452,12 @@
                             <li><i class="fas fa-check-circle"></i> حشوات تجميلية</li>
                             <li><i class="fas fa-check-circle"></i> علاج اللثة</li>
                         </ul>
-                        <button class="btn btn-text service-book-btn">
-                            احجز الآن <i class="fas fa-arrow-left"></i>
-                        </button>
+                        <div class="btn-wrapper">
+                            <button class="btn service-book-btn">
+                                <i class="fas fa-calendar-check"></i>
+                                احجز الآن
+                            </button>
+                        </div>
                     </div>
                 </div>
 
@@ -443,9 +476,12 @@
                             <li><i class="fas fa-check-circle"></i> حشوات كومبوزيت</li>
                             <li><i class="fas fa-check-circle"></i> ترميم الأسنان</li>
                         </ul>
-                        <button class="btn btn-text service-book-btn">
-                            احجز الآن <i class="fas fa-arrow-left"></i>
-                        </button>
+                        <div class="btn-wrapper">
+                            <button class="btn service-book-btn">
+                                <i class="fas fa-calendar-check"></i>
+                                احجز الآن
+                            </button>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -692,10 +728,11 @@
                     </div>
 
                     <div class="contact-social">
-                        <a href="#" class="social-link" aria-label="فيسبوك"><i class="fab fa-facebook-f"></i></a>
-                        <a href="#" class="social-link" aria-label="انستغرام"><i class="fab fa-instagram"></i></a>
-                        <a href="#" class="social-link" aria-label="تيك توك"><i class="fab fa-tiktok"></i></a>
-                        <a href="#" class="social-link" aria-label="يوتيوب"><i class="fab fa-youtube"></i></a>
+                        <a href="https://www.instagram.com/raneem_massri.abu_baker?utm_source=qr&igsi=dzQyYnAzbHlmYnY="
+                            class="social-link instagram-only" target="_blank" rel="noopener noreferrer"
+                            aria-label="تابعنا على انستغرام">
+                            <i class="fab fa-instagram"></i>
+                        </a>
                     </div>
                 </div>
 
@@ -733,6 +770,33 @@
         </div>
     </section>
 
+
+
+
+    <!-- ==================== INSTAGRAM CTA SECTION ==================== -->
+<section class="section instagram-cta">
+    <div class="container">
+        <div class="instagram-cta-card animate-on-scroll">
+            <div class="instagram-cta-content">
+                <div class="instagram-icon-large">
+                    <i class="fab fa-instagram"></i>
+                </div>
+                <h2>تابعنا على إنستغرام</h2>
+                <p>شاهد أحدث أعمالنا ونتائج مرضانا يومياً</p>
+                <a href="https://www.instagram.com/abubakr.raneem.dental" 
+                   target="_blank" 
+                   rel="noopener noreferrer" 
+                   class="btn btn-instagram">
+                    <i class="fab fa-instagram"></i>
+                    @abubakr.raneem.dental
+                </a>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+
     <!-- ==================== FOOTER ==================== -->
     <footer class="footer">
         <div class="footer-wave">
@@ -751,10 +815,10 @@
                     <p>عيادة متخصصة في طب وتجميل الأسنان في قلب مدينة حلب. نسعى لمنحكم ابتسامة صحية وجميلة تدوم مدى
                         الحياة.</p>
                     <div class="footer-social">
-                        <a href="#" aria-label="فيسبوك"><i class="fab fa-facebook-f"></i></a>
-                        <a href="#" aria-label="انستغرام"><i class="fab fa-instagram"></i></a>
-                        <a href="#" aria-label="تيك توك"><i class="fab fa-tiktok"></i></a>
-                        <a href="#" aria-label="يوتيوب"><i class="fab fa-youtube"></i></a>
+                        <a href="https://www.instagram.com/abubakr.raneem.dental" class="social-link instagram-only"
+                            target="_blank" rel="noopener noreferrer" aria-label="تابعنا على انستغرام">
+                            <i class="fab fa-instagram"></i>
+                        </a>
                     </div>
                 </div>
 
@@ -795,8 +859,20 @@
             </div>
 
             <div class="footer-bottom">
-                <p>&copy; 2026 عيادة د. عدنان أبو بكر & د. رنيم مصري. جميع الحقوق محفوظة.</p>
-                <p>تصميم وتطوير بـ <i class="fas fa-heart"></i> في حلب</p>
+                <div class="footer-bottom-content">
+                    <p class="copyright">
+                        &copy; 2026 عيادة د. عدنان أبو بكر & د. رنيم مصري. جميع الحقوق محفوظة.
+                    </p>
+                    <p class="developer-credit">
+                        تم التطوير بواسطة
+                        <a href="https://www.instagram.com/eng_hasan_hajjar" target="_blank" rel="noopener noreferrer"
+                            class="developer-link">
+                            <i class="fas fa-code"></i>
+                            المهندس حسن حجار
+                        </a>
+                        <span class="developer-title">مؤسس ومدير تنفيذي لشركة عقل رقمي</span>
+                    </p>
+                </div>
             </div>
         </div>
     </footer>
