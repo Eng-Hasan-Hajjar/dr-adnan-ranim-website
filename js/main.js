@@ -208,6 +208,47 @@ document.addEventListener('DOMContentLoaded', function () {
         document.head.appendChild(style);
     }
 
+
+
+    // ==========================================
+// HERO VIDEO CONTROLS
+// ==========================================
+const heroVideo = document.getElementById('heroVideo');
+const videoMuteBtn = document.getElementById('videoMuteBtn');
+
+// التحقق من تحميل الفيديو
+if (heroVideo) {
+    heroVideo.addEventListener('loadeddata', function() {
+        heroVideo.classList.add('loaded');
+        console.log('✅ تم تحميل الفيديو بنجاح');
+    });
+    
+    heroVideo.addEventListener('error', function(e) {
+        console.error('❌ خطأ في تحميل الفيديو:', e);
+        // إظهار الصورة البديلة في حال فشل الفيديو
+        document.querySelector('.hero-overlay').style.opacity = '0.95';
+    });
+}
+
+// زر كتم/إعادة الصوت
+if (videoMuteBtn) {
+    videoMuteBtn.addEventListener('click', function() {
+        if (heroVideo) {
+            heroVideo.muted = !heroVideo.muted;
+            this.classList.toggle('muted');
+            
+            // تحديث الأيقونة
+            const icon = this.querySelector('i');
+            if (heroVideo.muted) {
+                icon.classList.remove('fa-volume-up');
+                icon.classList.add('fa-volume-mute');
+            } else {
+                icon.classList.remove('fa-volume-mute');
+                icon.classList.add('fa-volume-up');
+            }
+        }
+    });
+}
     // ==========================================
     // BOOKING MODAL
     // ==========================================

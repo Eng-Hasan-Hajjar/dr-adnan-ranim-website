@@ -126,59 +126,94 @@
     </header>
 
     <!-- ==================== HERO SECTION ==================== -->
-    <section id="hero" class="hero">
-        <div class="hero-overlay"></div>
-        <div class="hero-particles" id="heroParticles"></div>
-        <div class="container hero-content">
-            <div class="hero-badge animate-on-scroll">
-                <i class="fas fa-award"></i>
-                <span>مركز طبي متخصص في طب وتجميل الأسنان</span>
-            </div>
-            <h1 class="hero-title animate-on-scroll">
-                ابتسامتك تبدأ
-                <span class="gradient-text">من هنا</span>
-            </h1>
-            <p class="hero-description animate-on-scroll">
-                د. عدنان أبو بكر & د. رنيم مصري يقدمان لكم أحدث تقنيات طب وتجميل الأسنان
-                في قلب مدينة حلب - نزلة أدونيس، المركز الطبي
+   <!-- ==================== HERO SECTION ==================== -->
+<section id="hero" class="hero">
+    <!-- فيديو الخلفية -->
+    <div class="hero-video-container">
+        <video 
+            autoplay 
+            muted 
+            loop 
+            playsinline 
+            poster="images/hero-poster.jpg"
+            class="hero-video"
+            id="heroVideo"
+        >
+            <source src="videos/hero-reel.mp4" type="video/mp4">
+            <!-- صيغ بديلة -->
+            <source src="videos/hero-reel.webm" type="video/webm">
+            <!-- رسالة للمستخدمين القدامى -->
+            <p class="video-fallback">
+                متصفحك لا يدعم تشغيل الفيديو. 
+                <a href="videos/hero-reel.mp4" download>حمّل الفيديو هنا</a>
             </p>
-            <div class="hero-buttons animate-on-scroll">
-                <button class="btn btn-primary btn-lg" id="heroBookBtn">
-                    <i class="fas fa-calendar-check"></i>
-                    احجز موعدك الآن
-                </button>
-                <a href="#services" class="btn btn-outline btn-lg">
-                    <i class="fas fa-teeth"></i>
-                    تعرّف على خدماتنا
-                </a>
-            </div>
-            <div class="hero-stats animate-on-scroll">
-                <div class="stat-item">
-                    <span class="stat-number" data-target="15">0</span>
-                    <span class="stat-plus">+</span>
-                    <span class="stat-label">سنة خبرة</span>
-                </div>
-                <div class="stat-divider"></div>
-                <div class="stat-item">
-                    <span class="stat-number" data-target="10000">0</span>
-                    <span class="stat-plus">+</span>
-                    <span class="stat-label">مريض سعيد</span>
-                </div>
-                <div class="stat-divider"></div>
-                <div class="stat-item">
-                    <span class="stat-number" data-target="5000">0</span>
-                    <span class="stat-plus">+</span>
-                    <span class="stat-label">عملية ناجحة</span>
-                </div>
-            </div>
+        </video>
+        
+        <!-- زر تشغيل/إيقاف الصوت (اختياري) -->
+        <button class="video-mute-btn" id="videoMuteBtn" aria-label="كتم الصوت">
+            <i class="fas fa-volume-mute"></i>
+        </button>
+    </div>
+    
+    <!-- الطبقة الشفافة فوق الفيديو -->
+    <div class="hero-overlay"></div>
+    
+    <!-- الجسيمات المتحركة -->
+    <div class="hero-particles" id="heroParticles"></div>
+    
+    <!-- المحتوى الرئيسي -->
+    <div class="container hero-content">
+        <div class="hero-badge animate-on-scroll">
+            <i class="fas fa-award"></i>
+            <span>مركز طبي متخصص في طب وتجميل الأسنان</span>
         </div>
-        <div class="hero-scroll-indicator">
-            <a href="#about">
-                <span>اكتشف المزيد</span>
-                <i class="fas fa-chevron-down"></i>
+        <h1 class="hero-title animate-on-scroll">
+            ابتسامتك تبدأ
+            <span class="gradient-text">من هنا</span>
+        </h1>
+        <p class="hero-description animate-on-scroll">
+            د. عدنان أبو بكر & د. رنيم مصري يقدمان لكم أحدث تقنيات طب وتجميل الأسنان
+            في قلب مدينة حلب - نزلة أدونيس، المركز الطبي
+        </p>
+        <div class="hero-buttons animate-on-scroll">
+            <button class="btn btn-primary btn-lg" id="heroBookBtn">
+                <i class="fas fa-calendar-check"></i>
+                احجز موعدك الآن
+            </button>
+            <a href="#services" class="btn btn-outline btn-lg">
+                <i class="fas fa-teeth"></i>
+                تعرّف على خدماتنا
             </a>
         </div>
-    </section>
+        <div class="hero-stats animate-on-scroll">
+            <div class="stat-item">
+                <span class="stat-number" data-target="15">0</span>
+                <span class="stat-plus">+</span>
+                <span class="stat-label">سنة خبرة</span>
+            </div>
+            <div class="stat-divider"></div>
+            <div class="stat-item">
+                <span class="stat-number" data-target="10000">0</span>
+                <span class="stat-plus">+</span>
+                <span class="stat-label">مريض سعيد</span>
+            </div>
+            <div class="stat-divider"></div>
+            <div class="stat-item">
+                <span class="stat-number" data-target="5000">0</span>
+                <span class="stat-plus">+</span>
+                <span class="stat-label">عملية ناجحة</span>
+            </div>
+        </div>
+    </div>
+    
+    <!-- مؤشر التمرير -->
+    <div class="hero-scroll-indicator">
+        <a href="#about">
+            <span>اكتشف المزيد</span>
+            <i class="fas fa-chevron-down"></i>
+        </a>
+    </div>
+</section>
 
     <!-- ==================== ABOUT SECTION ==================== -->
     <section id="about" class="section about">
